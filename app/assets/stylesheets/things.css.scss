@@ -1,3 +1,114 @@
-// Place all the styles related to the things controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/**
+ * Demo page styles, all list scroll effects styles are in sctroll.css
+ */
+html, body {
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	background: #323232;
+	font-family: 'Lato', Times, 'Times New Roman', serif;
+	font-size: 16px;
+	color: #eee;
+	margin-bottom: 40px;
+	line-height: 1;
+}
+
+.page-header {
+	margin-bottom: 30px;
+	padding: 20px 100px 20px 20px;
+	font-size: 20px;
+	line-height: 1.3em;
+	border-bottom: none;
+}
+
+header div {
+	margin-top: 10px;
+}
+
+a {
+	color: cyan;
+}
+
+article {
+	display: inline-block;
+	margin: 20px;
+}
+
+h2 {
+	font-size: 16px;
+	margin-bottom: 20px;
+	text-transform: uppercase;
+}
+
+small {
+	opacity: 0.6;
+	font-style: italic;
+	font-size: 14px;
+	margin-left: 5px;
+}
+
+/**
+ * List used for the demo page
+ */
+ul {
+	position: relative;
+	width: 900px;
+	height: 400px;
+	padding: 0;
+	margin: auto;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	list-style: none;
+
+	-webkit-perspective: 400px;
+	   -moz-perspective: 400px;
+	    -ms-perspective: 400px;
+	     -o-perspective: 400px;
+	        perspective: 400px;
+}
+	ul li {
+		position: relative;
+		padding: 20px;
+		background: #eee;
+		color: #252525;
+		font-size: 18px;
+		z-index: 2;
+		line-height:3em;
+
+		-webkit-transform: translateZ(0px);
+		   -moz-transform: translateZ(0px);
+		    -ms-transform: translateZ(0px);
+		     -o-transform: translateZ(0px);
+		        transform: translateZ(0px);
+	}
+	ul li:nth-child(odd) {
+		background: #fff;
+	}
+
+div.description {
+	width: 600px;
+	float: left
+}
+ul div {
+	
+}
+div.date {
+	width: 170px;
+	float: left;
+}
+
+div.actions {
+	width: 86px;
+	float: left;
+}
+
+.clear {
+	clear: both;
+}
+
+ul::-webkit-scrollbar { 
+    display: none; 
+}
+
