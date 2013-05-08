@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(:version => 20130504215538) do
 
   create_table "things", :force => true do |t|
     t.text     "description"
+    t.date     "date"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
