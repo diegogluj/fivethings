@@ -2,7 +2,7 @@ class ThingsController < ApplicationController
   # GET /things
   # GET /things.json
   def index
-    @things = Thing.all
+    @things = Thing.order('date ASC')
 
     respond_to do |format|
       format.html # index.html.erb
