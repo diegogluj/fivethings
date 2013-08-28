@@ -10,7 +10,13 @@
 <ul class="twirl">
   <% @things.each do |thing| %>
     <li>
+
       <div class="description"><%= thing.description %></div>
+      <div class="description">
+        <%= link_to thing.image(:big) ? thing.image.url(:big) : thing.image.url, :class => "fancybox"  do %>
+          <%= image_tag thing.image.url(:thumb)  if thing.image?%>
+        <% end %>
+      </div>
       <div class="date"><%=l thing.date %></div>
       <div class="actions">
         <%= link_to t('.edit', :default => t("helpers.links.edit")),

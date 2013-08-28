@@ -4,3 +4,6 @@
 
 jQuery ->
 	stroll.bind( 'ul' );
+
+jQuery ->
+	$("a.fancybox").fancybox();

@@ -10,7 +10,7 @@ gem 'rails', '3.1.0'
 # for Heroku deployment - as described in Ap. A of ELLS book
 group :development, :test do
   gem 'sqlite3'
-  gem 'ruby-debug19', :require => 'ruby-debug'
+  gem 'debugger'
   gem 'database_cleaner'
   gem 'capybara'
   gem 'launchy'
@@ -41,7 +41,9 @@ gem 'jquery-rails'
 # Deploy with Capistrano
 # gem 'capistrano'
 
-# To use debugger
 gem 'haml'
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem "twitter-bootstrap-rails"
+gem "paperclip", "~> 3.0"
+gem 'aws-sdk'
+gem 'fancybox-rails'
