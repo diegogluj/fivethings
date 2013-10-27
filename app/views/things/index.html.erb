@@ -1,5 +1,5 @@
 <%- model_class = Thing -%>
-<div class="page-header">
+<div class="page-actions">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize %>
     <%= link_to t('.new', :default => t("helpers.links.new")),
       new_thing_path,
@@ -7,27 +7,33 @@
   </h1>
 
 </div>
-<ul class="twirl">
-  <% @things.each do |thing| %>
-    <li>
+<div class="thing-list">
+  <ul class="twirl">
+    <% @things.each do |thing| %>
+      <li>
 
-      <div class="description"><%= thing.description %></div>
-      <div class="description">
-        <%= link_to thing.image(:big) ? thing.image.url(:big) : thing.image.url, :class => "fancybox"  do %>
-          <%= image_tag thing.image.url(:thumb)  if thing.image?%>
-        <% end %>
-      </div>
-      <div class="date"><%=l thing.date %></div>
-      <div class="actions">
-        <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                    edit_thing_path(thing), :class => 'btn btn-mini' %>
-        <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                    thing_path(thing),
-                    :method => :delete,
-                    :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                    :class => 'btn btn-mini btn-danger' %>
-      </div>
-      <div class="clear"></div>
-    </li>
-  <% end %>
-</ul>
+        <div class="description">
+          <% if thing.image? %>
+            <%= link_to thing.image(:big) ? thing.image.url(:big) : thing.image.url, :class => "fancybox"  do %>
+              <%= image_tag thing.image.url(:thumb)  if thing.image?%>
+            <% end %>
+          <% end %>
+          <% if thing.description %>
+            <%= thing.description %>
+          <% end %>
+        </div>
+        <div class="date"><%=l thing.date %></div>
+        <div class="actions">
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_thing_path(thing), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      thing_path(thing),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </div>
+        <div class="clear"></div>
+      </li>
+    <% end %>
+  </ul>
+</div>

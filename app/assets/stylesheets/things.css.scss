@@ -4,6 +4,8 @@
 html, body {
 	margin: 0px;
 	padding: 0px;
+	height: 100%;
+	width: 100%;
 }
 
 body {
@@ -15,12 +17,17 @@ body {
 	line-height: 1;
 }
 
-.page-header {
-	margin-bottom: 30px;
-	padding: 20px 100px 20px 20px;
-	font-size: 20px;
-	line-height: 1.3em;
-	border-bottom: none;
+.page-actions {
+	margin-top: 2%;
+	width: 10%;
+	float:left;
+}
+
+.thing-list {
+	margin-top: 2%;
+	width: 90%;
+	height: 90%;
+	float:left;
 }
 
 header div {
@@ -54,8 +61,8 @@ small {
  */
 ul {
 	position: relative;
-	width: 900px;
-	height: 400px;
+	width: 100%;
+	height: 100%;
 	padding: 0;
 	margin: auto;
 	overflow-x: hidden;
@@ -76,6 +83,9 @@ ul {
 		font-size: 18px;
 		z-index: 2;
 		line-height:3em;
+		width: 845px;
+		margin: auto;
+		border-radius: 5px;
 
 		-webkit-transform: translateZ(0px);
 		   -moz-transform: translateZ(0px);
@@ -110,5 +120,21 @@ div.actions {
 
 ul::-webkit-scrollbar { 
     display: none; 
+}
+
+.fancybox {
+	display: block;
+	position: relative;
+	width: 100px;
+}
+
+.fancybox img {
+	display: block;
+	position: relative;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	margin: auto;
 }
 
